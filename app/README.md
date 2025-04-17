@@ -49,24 +49,26 @@ Follow these steps to deploy the application.
 ### Step 1: Clone the Repository
 If you have Git installed, clone the repository to your local machine:
 ```bash
-git clone <repository-url>
-cd <repository-directory>
+git clone https://github.com/AsysGupta/Particle41.git
+cd Particle41
 ```
 Alternatively, download the project files manually and navigate to the project directory in your terminal.
 
 ### Step 2: Create requirements.txt
 Create a file named `requirements.txt` in the project directory with the following content:
 ```
-Flask==2.0.1
+Flask==2.0.3
+Werkzeug==2.0.3
+
 ```
 This specifies the Flask dependency required for the application.
 
 ### Step 3: Build the Docker Image
 Build the Docker image using the provided `Dockerfile`. Run the following command in the project directory:
 ```bash
-docker build -t flask-visitor-info .
+docker build -t SimpleTimeService .
 ```
-- `-t flask-visitor-info`: Names the image `flask-visitor-info`.
+- `-t SimpleTimeService`: Names the image `SimpleTimeService`.
 - `.`: Specifies the current directory as the build context.
 
 This command pulls the `python:3.9-slim` base image, installs the dependencies from `requirements.txt`, and copies the application code into the image.
@@ -74,12 +76,12 @@ This command pulls the `python:3.9-slim` base image, installs the dependencies f
 ### Step 4: Run the Docker Container
 Run the Docker container from the built image:
 ```bash
-docker run -d -p 5000:5000 --name flask-app flask-visitor-info
+docker run -d -p 5000:5000 --name flask-app SimpleTimeService
 ```
 - `-d`: Runs the container in detached mode (in the background).
 - `-p 5000:5000`: Maps port `5000` on the host to port `5000` in the container.
 - `--name flask-app`: Names the container `flask-app`.
-- `flask-visitor-info`: Specifies the image to use.
+- `SimpleTimeService`: Specifies the image to use.
 
 The application is now running and accessible.
 
@@ -111,7 +113,7 @@ Once the container is running, you can access the application in the following w
 - **Port Conflict**:
   - If port `5000` is already in use, you can map a different host port. For example:
     ```bash
-    docker run -d -p 8080:5000 --name flask-app flask-visitor-info
+    docker run -d -p 8080:5000 --name flask-app SimpleTimeService
     ```
     Then access the application at `http://localhost:8080`.
 
