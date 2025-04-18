@@ -59,7 +59,6 @@ Create a file named `requirements.txt` in the project directory with the followi
 ```
 Flask==2.0.3
 Werkzeug==2.0.3
-
 ```
 This specifies the Flask dependency required for the application.
 
@@ -146,8 +145,7 @@ Contributions are welcome! To contribute:
 Please ensure your code follows PEP 8 style guidelines and includes appropriate comments.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](../LICENSE) file for details.
 
 ---
 
-This README provides a clear and comprehensive guide to understanding, deploying, and accessing the Flask Visitor Info Application. If you have any questions or need further assistance, feel free to open an issue in the repository.
