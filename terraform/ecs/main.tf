@@ -1,0 +1,20 @@
+module "ecs" {
+  source                = "../modules/ecs"
+  cluster_name          = var.cluster_name
+  family                = var.family
+  execution_role_arn    = var.execution_role_arn
+  task_role_arn         = var.task_role_arn
+  container_name        = var.container_name
+  image                 = var.image
+  container_port        = var.container_port
+  container_environment = var.container_environment
+  service_name          = var.service_name
+  desired_count         = var.desired_count
+  subnets               = var.subnets
+  security_groups       = var.security_groups
+  assign_public_ip      = var.assign_public_ip
+  load_balancer         = var.load_balancer
+  tags                  = var.tags
+  cpu                   = var.cpu
+  memory                = var.memory
+}
